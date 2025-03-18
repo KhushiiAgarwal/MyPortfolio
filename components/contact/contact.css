@@ -1,0 +1,136 @@
+.contact__info {
+    display: flex;  /* Use flexbox for layout */
+    justify-content: space-between;  /* Distribute space evenly between items */
+    align-items: center;  /* Ensures all items are aligned to the center */
+    gap: 2rem;  /* Adds spacing between the cards */
+    flex-wrap: nowrap;  /* Prevents wrapping */
+    margin-left: -3rem; /* Removes any unwanted left margin/padding */
+    padding-left: 0; /* Removes any left padding */
+}
+
+.contact__card-title {
+    color: hsl(245, 85%, 45%) !important;
+}
+.contact__card {
+    background-color:  #deeaeb;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    width: 195px;  /* Adjust width to fit all cards in one line */
+    display: flex;
+    flex-direction: column; /* Ensures the icon and button are stacked inside the card */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Makes the card container a positioning context for the details */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth scaling and shadow */
+}
+
+/* Card hover effect */
+.contact__card:hover {
+    transform: scale(1.05);  /* Slightly increase the size of the card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Add shadow for depth */
+    background: linear-gradient(145deg, #f0f0f0, #d3d3d3);  /* Subtle gradient effect on hover */
+}
+
+/* Make the icons bigger */
+.contact__card-icon {
+    font-size: 3rem; /* Increase the icon size (from 2.5rem to 3rem or adjust as needed) */
+    margin-bottom: var(--mb-0-5);
+}
+
+/* Initially hide the contact data */
+.contact__card-data {
+    visibility: hidden;  /* Hide by default */
+    opacity: 0;  /* Ensure it's completely invisible */
+    transition: opacity 0.3s ease, visibility 0s 0.3s;  /* Smooth fade-in effect */
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color:  hsl(245, 85%, 45%);
+}
+
+/* Show the contact data (middle part) when the card is hovered */
+.contact__card:hover .contact__card-data {
+    visibility: visible;  
+    opacity: 1;  /* Fade in the data */
+    transition: opacity 0.3s ease, visibility 0s 0s;  
+}
+
+/* Icon Colors */
+.bxl-gmail {
+    color: #D44638;
+}
+
+.bxl-whatsapp {
+    color: #25D366;
+}
+
+.bxl-linkedin {
+    color: #0073b1;
+}
+
+.bxl-medium {
+    color: black;
+}
+
+.bxl-github {
+    color: #333;
+}
+
+.contact__button {
+    color: hsl(245, 85%, 45%) !important;
+    font-size: var(--small-font-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.25rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;  /* Smooth transition for button */
+}
+
+/* Button hover effect */
+.contact__button:hover {
+    color: hsl(245, 85%, 45%); /* Change text color on hover */
+    transform: translateY(-5px);  /* Slightly lift the button */
+}
+
+/* Button Icon hover effect */
+.contact__button-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact__button:hover .contact__button-icon {
+    transform: translateX(0.25rem);
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 992px) {
+    .contact__info {
+        gap: 1rem;  /* Reduce spacing between cards */
+    }
+    .contact__card {
+        width: 18%;  /* Adjust width to make cards smaller on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact__info {
+        flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+        justify-content: center;
+    }
+    .contact__card {
+        width: 45%;  /* Cards take up half the screen width on small screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact__info {
+        flex-direction: column;  /* Stack the cards vertically on very small screens */
+        align-items: center;
+    }
+    .contact__card {
+        width: 90%;  /* Make the cards take up most of the screen on very small screens */
+    }
+}
