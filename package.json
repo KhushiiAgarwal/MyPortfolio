@@ -16,7 +16,7 @@
     "react-dom": "^19.0.0",
     "react-github-calendar": "^4.5.6",
     "react-router-dom": "^7.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "typewriter-effect": "^2.21.0",
     "web_site": "file:",
     "web-vitals": "^2.1.4"
